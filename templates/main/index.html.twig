@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block title %}Portfolio - Cédric Le Sergent{% endblock %}
 
 {% block body %}
-    <div class="grid h-screen place-items-center">
-        <h1>Hello World prise de tete de ouf</h1>
-        <h2>test workflow Symfony test 1</h2>
-    </div>
+    {# import Hero Section #}
+    <div {{ react_component('HeroSection') }}></div>
 {% endblock %}
