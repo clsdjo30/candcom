@@ -40,8 +40,8 @@ export default function HeroSection() {
 
                 <div>
                     <div ref={(el) => (logo_1 = el)}
-                         className="flex absolute justify-center items-center h-screen w-full">
-                        <h1 className="flex flex-col place-items-center items-start md:flex-row font-semibold font-title  text-[#e7e7e7] text-[6vmax] md:text-[6.05vmax] mix-blend-difference leading-none">
+                         className="absolute flex justify-center items-center h-screen w-full">
+                        <h1 className="flex flex-col md:flex-row font-semibold font-title  text-[#e7e7e7] text-[6vmax] md:text-[6.05vmax] mix-blend-difference leading-none">
                             <span>cédric</span>
                             <span className="md:ml-10">le sergent</span>
 
