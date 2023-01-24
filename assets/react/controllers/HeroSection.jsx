@@ -41,15 +41,15 @@ export default function HeroSection() {
                 <div>
                     <div ref={(el) => (logo_1 = el)}
                          className="flex absolute justify-center items-center h-screen w-full">
-                        <h1 className="font-semibold font-title  text-[#e7e7e7] text-[1.5vmax] md:text-[4.05vmax] mix-blend-difference leading-none">
+                        <h1 className="font-semibold font-title  text-[#e7e7e7] text-[4.5vmax] md:text-[6.05vmax] mix-blend-difference leading-none">
                             cédric le sergent
                         </h1>
                     </div>
                 </div>
                 <div ref={(el) => (subTitle = el)}
                      className=" capitalize absolute flex justify-center items-center h-screen w-full top-10 md:top-20">
-                    <h2 className="font-title  text-[#e7e7e7] text-[3vmax] md:text-[3.05vmax] mix-blend-difference leading-none">
-                        développeur Back-end
+                    <h2 className="font-title  text-[#e7e7e7] text-[4vmax] md:text-[3.05vmax] mix-blend-difference leading-none">
+                        développeur Fullstack
                     </h2>
                 </div>
 

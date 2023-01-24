@@ -5,4 +5,10 @@
 {% block body %}
     {# import Hero Section #}
     <div {{ react_component('HeroSection') }}></div>
+
+    {# include main navbar #}
+    {{ include('partials/_navbar.html.twig') }}
+
+    {# import Presentation Section #}
+    <div {{ react_component('Presentation') }}></div>
 {% endblock %}
