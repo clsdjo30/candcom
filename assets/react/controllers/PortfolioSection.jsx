@@ -17,19 +17,17 @@ export default function PortfolioSection() {
         <div className="container mx-auto px-5 md:px-16 py-16">
 
             <TitleSection
-                bigTitle="Portfolio"
-                smallTitle="Portfolio"
-                detail="mes projets"
+                bigTitle="Projets"
+                smallTitle="Mes Projets"
+                detail="Portfolio"
                 description="projets réaliser lors de ma formation"
             />
-            <div className="grid grid-cols-1 gap-12 mt-8 lg:grid-cols-3 mx-auto">
+            <div className="grid grid-cols-1 gap-12 mt-8 lg:grid-cols-2 mx-auto">
                 <PortfolioCard
-                    lien="https://studi-gdw-full-stack-eval-1-html-tailwind.vercel.app/"
-                    altDescription="Page d'accueil du site sterilyzed"
-                    image={catsImage}
-                    title="Sterilyzed"
-                    description="Site pour une association de chat libre, réalisé en HTML avec le framework TailwindCss"
-                    date="janvier 2022"
+                    image={fitnessImage}
+                    title="Lions Fitness Club"
+                    description="Interface d'administration des droits des franchisés d'une enseigne de salles de sport "
+                    date="septembre 2022"
                 />
                 <PortfolioCard
                     image={trtImage}
@@ -38,10 +36,12 @@ export default function PortfolioSection() {
                     date="aout 2022"
                 />
                 <PortfolioCard
-                    image={fitnessImage}
-                    title="Lions Fitness Club"
-                    description="Interface d'administration des droits des franchisés d'une enseigne de salles de sport "
-                    date="septembre 2022"
+                    lien="https://studi-gdw-full-stack-eval-1-html-tailwind.vercel.app/"
+                    altDescription="Page d'accueil du site sterilyzed"
+                    image={catsImage}
+                    title="Sterilyzed"
+                    description="Site pour une association de chat libre, réalisé en HTML avec le framework TailwindCss"
+                    date="janvier 2022"
                 />
                 <PortfolioCard
                     image={diceGame}
