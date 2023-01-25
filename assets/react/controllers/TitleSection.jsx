@@ -6,9 +6,9 @@ function TitleSection({bigTitle, detail, smallTitle, description}) {
         <>
 
             <div
-                className=" w-full mx-auto flex flex-col justify-start md:flex-row md:justify-center md:mb-10 md:-mt-10">
+                className="w-full mx-auto flex flex-col justify-start md:flex-row md:justify-center md:mb-10 md:-mt-10 -ml-5">
 
-                <h2 className="text-6xl md:text-8xl font-title font-black text-primary uppercase mx-5">
+                <h2 className="text-5xl md:text-8xl font-title font-black text-primary uppercase mx-5">
                     {bigTitle}
                 </h2>
                 <div className="flex md:flex-col  md:justify-end mx-5">

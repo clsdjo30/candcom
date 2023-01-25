@@ -29,7 +29,7 @@ export default function () {
 
 
     return (
-        <div className="container mx-auto pt-16">
+        <div className="container mx-auto px-5 md:px-16 py-16">
             <TitleSection
                 bigTitle="technos"
                 smallTitle="mes technos"
