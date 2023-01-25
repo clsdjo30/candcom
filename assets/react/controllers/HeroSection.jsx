@@ -6,6 +6,8 @@ export default function HeroSection() {
     let logo_1 = useRef(null)
     let subTitle = useRef(null)
     let logo_2 = useRef(null);
+    let logo_3 = useRef(null);
+    let logo_4 = useRef(null);
 
     useEffect(() => {
         gsap.fromTo(logo_1, {
@@ -19,6 +21,26 @@ export default function HeroSection() {
                 opacity: 1
             });
         gsap.fromTo(logo_2, {
+                opacity: 0,
+                duration: 0.5,
+                y: 200,
+                ease: Power1.easeInOut
+            },
+            {
+                y: 0,
+                opacity: 1
+            });
+        gsap.fromTo(logo_3, {
+                opacity: 0,
+                duration: 1.5,
+                y: -200,
+                ease: Power1.easeInOut
+            },
+            {
+                y: 0,
+                opacity: 1
+            });
+        gsap.fromTo(logo_4, {
                 opacity: 0,
                 duration: 0.5,
                 y: 200,
@@ -65,10 +87,19 @@ export default function HeroSection() {
 
                 </h1>
             </div>
-            <div className=" capitalize absolute flex justify-center items-center h-screen w-full top-20">
+            <div className=" capitalize absolute flex justify-center items-center h-screen w-full top-32">
                 <h2 ref={(el) => (subTitle = el)}
-                    className="font-title  text-[#e7e7e7] text-[4vmax] md:text-[3.05vmax] mix-blend-difference leading-none">
-                    développeur Fullstack
+                    className="flex flex-col md:flex-row font-semibold font-title  text-[#e7e7e7] text-[4vmax] md:text-[5.05vmax] mix-blend-difference leading-none">
+                    <span ref={(el) => (logo_3 = el)}
+                          className="flex justify-center">
+                  développeur
+                </span>
+                    <span ref={(el) => (logo_4 = el)}
+                          className="md:ml-10 flex justify-center" id="second">
+                    fullstack
+                </span>
+
+
                 </h2>
             </div>
 
