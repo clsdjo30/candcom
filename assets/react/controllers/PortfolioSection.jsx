@@ -26,6 +26,7 @@ export default function PortfolioSection() {
                 <PortfolioCard
                     image={fitnessImage}
                     title="Lions Fitness Club"
+                    lien="https//https://dev-lions-club.candcom.com/"
                     description="Interface d'administration des droits des franchisés d'une enseigne de salles de sport "
                     date="septembre 2022"
                 />
