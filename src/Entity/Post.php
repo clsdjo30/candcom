@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
@@ -38,8 +39,21 @@ class Post
     #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'posts')]
     private Collection $tags;
 
-    #[ORM\Column(length: 255)]
-    private ?string $slug = null;
+    /**
+     * @var string|null
+     *
+     * @Gedmo\Slug(fields={"title"})
+     * @ORM\Column(length=255, unique=true)
+     */
+    #[ORM\Column(length: 255, unique: true)]
+    #[Gedmo\Slug(
+        fields: ['title'],
+        updatable: false,
+        style: 'camel',
+        unique: false,
+        separator: '_',
+    )]
+    private ?string $slug;
 
     public function __construct()
     {
