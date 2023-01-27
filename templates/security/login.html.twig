@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    <div class="grid h-screen place-items-center">
+        <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+                {# Start of Login Form #}
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.userIdentifier }}, <a
+                                    href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+                    <h1 class="h3 mb-3 font-subtitle font-bold text-xl text-center">Se Connecter</h1>
+                    <label for="inputEmail" class="text-sm font-medium leading-none text-gray-800">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                           class="input bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2 mb-5"
+                           autocomplete="email" required autofocus>
+                    <label for="inputPassword" class="text-sm font-medium leading-none text-gray-800">Password</label>
+                    <input type="password" name="password" id="inputPassword"
+                           class="input bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                           autocomplete="current-password" required>
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+                    <div class="grid mt-5">
+                        <button class="btn btn-sm btn-outline btn-neutral" type="submit">
+                            Connexion
+                        </button>
+                    </div>
+                </form>
+                {# End of Login Form #}
+            </div>
+        </div>
+    </div>
+{% endblock %}
