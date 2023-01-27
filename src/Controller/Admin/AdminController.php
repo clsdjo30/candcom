@@ -13,8 +13,9 @@ use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[Route('/admin')]
+#[Route('/admin'), isGranted('ROLE_ADMIN')]
 class AdminController extends AbstractDashboardController
 {
     /**
