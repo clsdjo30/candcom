@@ -55,7 +55,7 @@
                                            hx-target="#search-result"
                                            hx-get="{{ path('post_details', {'id': last.id}) }}"
                                            hx-swap="outerHTML"
-                                           hx-push-url="/blog/{{ last.title }}"
+                                           hx-push-url="/blog/{{ last.slug }}"
                                            href="#"
                                         >
                                             {{ last.title }}
@@ -116,7 +116,7 @@
                                                        hx-target="#search-result"
                                                        hx-get="{{ path('post_details', {'id': post.id}) }}"
                                                        hx-swap="outerHTML"
-                                                       hx-push-url="/blog/{{ post.title }}"
+                                                       hx-push-url="/blog/{{ post.slug }}"
                                                        href="#"
                                                     >
                                                         Lire plus...
