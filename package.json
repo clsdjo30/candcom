@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "daisyui": "^2.47.0",
-        "gsap": "^3.11.4"
+        "gsap": "^3.11.4",
+        "htmx.org": "^1.8.5"
     }
 }
