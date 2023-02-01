@@ -6,6 +6,7 @@ use App\Entity\Post;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
@@ -29,6 +30,7 @@ class PostCrudController extends AbstractCrudController
             TextField::new('shortDescription'),
             TextEditorField::new('content')->hideOnIndex()->setTrixEditorConfig($config),
             DateField::new('createdAt')->hideOnForm(),
+            AssociationField::new('tags'),
             ImageField::new('postImage')
                 ->setUploadDir('public/uploads/images/')
                 ->setBasePath('public/uploads/images/'),
