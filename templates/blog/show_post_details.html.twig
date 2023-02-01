@@ -1,0 +1,19 @@
+<div class="flex items-center justify-center w-full pb-8" id="search-result">
+
+    <div class="mr-2 md:mr-4 ml-2 ">
+        <div class="pb-10">
+            <!-- first post -->
+            <div class="w-10/12 h-auto mx-10">
+                <img class="w-full h-auto rounded" src="{{ post.postImage }}" alt="">
+                <h1 class="text-gray-900 font-serif text-3xl my-5 font-thin"><a href="">{{ post.title }}</a></h1>
+                <span class="text-xs text-gray-800 font-thin block mb-5">By Page. {{ post.createdAt | format_datetime(pattern="MMMM y", locale='fr') }}</span>
+                <div class="text-gray-900 font-thin tracking-wider leading-loose">
+                    {{ post.content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

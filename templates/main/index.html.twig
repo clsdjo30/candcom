@@ -21,6 +21,9 @@
     {# import Portfolio Section #}
     <div {{ react_component('PortfolioSection') }} id="portfolio" class="z-0"></div>
 
+    {# import Portfolio Section #}
+    {{ include('partials/_blog-section.html.twig') }}
+
     {# include footer #}
     {{ include('partials/_footer.html.twig') }}
 {% endblock %}
