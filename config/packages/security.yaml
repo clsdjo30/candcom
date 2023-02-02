@@ -22,7 +22,12 @@ security:
     main:
       lazy: true
       provider: app_user_provider
-      custom_authenticator: App\Security\AdminAuthenticator
+      form_login:
+        login_path: app_login
+        check_path: app_login
+        enable_csrf: true
+      login_throttling:
+        max_attempts: 3
 
       logout:
         path: app_logout

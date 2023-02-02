@@ -26,7 +26,7 @@ class AdminController extends AbstractDashboardController
     #[Route('/', name: 'admin')]
     public function index(): Response
     {
-
+        $this->denyAccessUnlessGranted("ROLE_ADMIN");
 
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
         return $this->redirect($adminUrlGenerator->setController(PostCrudController::class)->generateUrl());
