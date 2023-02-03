@@ -7,6 +7,7 @@
         <div class="card w-96 bg-base-100 shadow-xl">
             <div class="card-body">
                 {# Start of Login Form #}
+
                 <form action="{{ path('app_login') }}" method="post">
                     {% if error %}
                         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -32,6 +33,10 @@
                     <input type="hidden" name="_csrf_token"
                            value="{{ csrf_token('authenticate') }}"
                     >
+                    <a href="{{ path('app_forgot_password_request') }}"
+                       class="font-text underline text-accent hover:text-red-700">
+                        Mot de pass oublié?
+                    </a>
                     <div class="grid mt-5">
                         <button class="btn btn-sm btn-outline btn-neutral" type="submit">
                             Connexion
