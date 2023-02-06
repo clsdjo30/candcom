@@ -36,7 +36,7 @@ class ResetPasswordController extends AbstractController
      * Display & process form to request a password reset.
      * @throws TransportExceptionInterface
      */
-    #[Route('/request', name: 'app_forgot_password_request')]
+    #[Route('/', name: 'app_forgot_password_request')]
     public function request(Request $request, MailerInterface $mailer): Response
     {
         $form = $this->createForm(ResetPasswordRequestFormType::class);
@@ -156,7 +156,7 @@ class ResetPasswordController extends AbstractController
         }
 
         $email = (new TemplatedEmail())
-            ->from(new Address('noreply@candcom.com', 'C&Com Studio'))
+            ->from(new Address('contact@c-and-com.studio', 'C&Com Studio'))
             ->to($user->getUserIdentifier())
             ->subject('Your password reset request')
             ->htmlTemplate('reset_password/email.html.twig')
