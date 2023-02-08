@@ -54,7 +54,9 @@ class AppFixtures extends Fixture
                 ->setContent($faker->text())
                 ->setCreatedAt($faker->dateTime())
                 ->setPostImage($faker->imageUrl(640, 480, 'animals', true))
+                ->setAltImage($faker->sentence(3))
                 ->setIsAhead(false)
+                ->setIsAside(false)
                 ->setSlug($post->getTitle())
                 ->addTag($faker->randomElement($tags));
 
