@@ -29,21 +29,41 @@ class PostCrudController extends AbstractCrudController
 
         return [
             IdField::new('id')->hideOnForm()->hideOnDetail()->hideOnIndex(),
-            TextField::new('title'),
-            TextField::new('shortDescription'),
-            TextEditorField::new('content')->hideOnIndex(),
+            TextField::new('title')
+                ->setLabel("Titre de l'article")
+                ->setColumns(6),
+            BooleanField::new('isAhead')
+                ->setColumns(3)
+                ->setLabel("Acceuil - Articles mise en avant"),
+            BooleanField::new('IsAside')
+                ->setColumns(3)
+                ->setLabel("Acceuil - Articles secondaire "),
+            TextField::new('shortDescription')
+                ->setLabel("Resumé de l'article"),
+            ImageField::new('postImage')
+                ->setLabel("Bannière de l'article")
+                ->setColumns(6)
+                ->setUploadDir('public/uploads/images/')
+                ->setBasePath('public/uploads/images/'),
+            TextField::new('altImage')
+                ->setLabel("SEO - Description de la bannière")
+                ->setColumns(6),
+            TextEditorField::new('content')->hideOnIndex()
+                ->setColumns(12)
+                ->setLabel("Contenu de l'article")
+                ->setTrixEditorConfig([
+                    'blockAttributes' => [
+                        'default' => ['tagName' => 'p'],
+                        'heading1' => ['tagName' => 'h2'],
+                    ],
+                    'data-trix-attachment' => true
+                ]),
             DateField::new('createdAt')->hideOnForm(),
             CollectionField::new('tags')
                 ->allowAdd()
+                ->setLabel("TAGS")
                 ->useEntryCrudForm(TagCrudController::class)
                 ->setEntryIsComplex(false),
-            ImageField::new('postImage')
-
-                ->setUploadDir('public/uploads/images/')
-                ->setBasePath('public/uploads/images/'),
-            TextField::new('altImage'),
-            BooleanField::new('isAhead'),
-            BooleanField::new('IsAside')
         ];
     }
 
