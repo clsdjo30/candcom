@@ -26,8 +26,8 @@
         number:"4.",
         bigTitle:"blog",
         smallTitle:"blog",
-        detail:"articles",
-        description:"Un peu de tout"}) }} class="mt-24">
+        detail:"articles"
+    }) }} class="mt-24">
     </div>
 
     {# import Portfolio Section #}
@@ -55,6 +55,17 @@
         </button>
     </div>
 
+    {# import Blog Title Module #}
+    <div {{ react_component('TitleSection', {
+        number:"5.",
+        bigTitle:"contact",
+        smallTitle:"renseignements",
+        detail:"travaillons ensemble"
+    }) }} class="mt-24">
+    </div>
+
+    {# include Contact Form #}
+    {#{{ include('partials/_contact-form.html.twig') }}#}
 
 
     {# include footer #}
