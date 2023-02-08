@@ -18,7 +18,7 @@ class Tag
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\ManyToMany(targetEntity: Post::class, inversedBy: 'tags')]
+    #[ORM\ManyToMany(targetEntity: Post::class, inversedBy: 'tags', cascade: ['persist', 'remove'])]
     private Collection $posts;
 
     public function __construct()

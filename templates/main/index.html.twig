@@ -21,8 +21,52 @@
     {# import Portfolio Section #}
     <div {{ react_component('PortfolioSection') }} id="portfolio" class="z-0"></div>
 
+    {# import Blog Title Module #}
+    <div {{ react_component('TitleSection', {
+        number:"4.",
+        bigTitle:"blog",
+        smallTitle:"blog",
+        detail:"articles"
+    }) }} class="mt-24">
+    </div>
+
     {# import Portfolio Section #}
-    {{ include('partials/_blog-section.html.twig') }}
+    <div class="lg:flex justify-center mx-10">
+        {% for post in posts %}
+            {% if post.isAhead == true %}
+                {{ include('partials/_blog-section.html.twig') }}
+            {% endif %}
+        {% endfor %}
+        {# Aside blog post  #}
+        <div class="lg:ml-6 lg:mt-0 mt-7 2xl:w-3/12 lg:w-4/12 w-full flex lg:flex-col sm:flex-row flex-col items-center justify-between">
+            {% for post in posts %}
+                {% if post.isAside == true %}
+                {{ include('partials/_aside-blog-section.html.twig') }}
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="flex justify-center items-center w-full py-2 gap-2 mt-5 mb-10">
+        <button class="btn btn-outline btn-xs sm:btn-sm md:btn-md">
+            <a href="{{ path('blog') }}">
+                Voir plus d'articles
+            </a>
+        </button>
+    </div>
+
+    {# import Blog Title Module #}
+    <div {{ react_component('TitleSection', {
+        number:"5.",
+        bigTitle:"contact",
+        smallTitle:"renseignements",
+        detail:"travaillons ensemble"
+    }) }} class="mt-24">
+    </div>
+
+    {# include Contact Form #}
+    {#{{ include('partials/_contact-form.html.twig') }}#}
+
 
     {# include footer #}
     {{ include('partials/_footer.html.twig') }}

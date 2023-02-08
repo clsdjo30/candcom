@@ -36,7 +36,7 @@ class Post
     #[ORM\Column]
     private ?bool $isAhead = null;
 
-    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'posts')]
+    #[ORM\ManyToMany(targetEntity: Tag::class, mappedBy: 'posts', cascade: ['persist', 'remove'])]
     private Collection $tags;
 
     /**
@@ -54,6 +54,12 @@ class Post
         separator: '_',
     )]
     private ?string $slug;
+
+    #[ORM\Column]
+    private ?bool $isAside = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $altImage = null;
 
     public function __construct()
     {
@@ -172,6 +178,30 @@ class Post
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function isIsAside(): ?bool
+    {
+        return $this->isAside;
+    }
+
+    public function setIsAside(bool $isAside): self
+    {
+        $this->isAside = $isAside;
+
+        return $this;
+    }
+
+    public function getAltImage(): ?string
+    {
+        return $this->altImage;
+    }
+
+    public function setAltImage(string $altImage): self
+    {
+        $this->altImage = $altImage;
 
         return $this;
     }

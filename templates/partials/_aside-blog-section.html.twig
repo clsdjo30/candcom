@@ -1,7 +1,4 @@
-{# Dynamic Blog Section #}
-
-
-<div class="2xl:w-7/12 lg:w-8/12 md:w-16/16 w-full">
+<div class="lg:w-auto sm:w-1/2">
     <img src="/uploads/images/{{ post.postImage }}" alt="{{ post.altImage }}" class="w-full">
     <div class="mt-4">
         <div class="flex items-center justify-between">
@@ -12,6 +9,7 @@
                         {{ tag.name }}
                     </span>
                 {% endfor %}
+
             </div>
             <div class="flex items-center">
                 <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/blog-4-svg1.svg" alt="line"/>
@@ -20,7 +18,7 @@
                 </p>
             </div>
         </div>
-        <h1 class="lg:text-3xl text-2xl font-semibold mt-4 text-gray-800">
+        <h1 class="text-2xl font-semibold leading-6 mt-4 text-gray-800">
             {{ post.title }}
         </h1>
         <p class="text-base leading-6 text-gray-600 dark:text-gray-200 mt-2">
@@ -28,6 +26,3 @@
         </p>
     </div>
 </div>
-
-
-{# End of Dynamic Blog Section #}
