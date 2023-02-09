@@ -34,10 +34,10 @@ class PostCrudController extends AbstractCrudController
                 ->setColumns(6),
             BooleanField::new('isAhead')
                 ->setColumns(3)
-                ->setLabel("Acceuil - Articles mise en avant"),
+                ->setLabel("Ahead"),
             BooleanField::new('IsAside')
                 ->setColumns(3)
-                ->setLabel("Acceuil - Articles secondaire "),
+                ->setLabel("Aside"),
             TextField::new('shortDescription')
                 ->setLabel("Resumé de l'article"),
             ImageField::new('postImage')
@@ -53,10 +53,11 @@ class PostCrudController extends AbstractCrudController
                 ->setLabel("Contenu de l'article")
                 ->setTrixEditorConfig([
                     'blockAttributes' => [
-                        'default' => ['tagName' => 'p'],
-                        'heading1' => ['tagName' => 'h2'],
+                        'default' => ['tagName' => 'div'],
+                        'heading1' => ['tagName' => 'h1'],
+                        'code' => ['tagName' => 'pre']
                     ],
-                    'data-trix-attachment' => true
+
                 ]),
             DateField::new('createdAt')->hideOnForm(),
             CollectionField::new('tags')
