@@ -3,149 +3,25 @@
 {% block title %}Developpeur Fullstack - Blog{% endblock %}
 
 {% block body %}
-    <div id="response-div">
-        {{ include('partials/_blogNavbar.html.twig') }}
-        <div class="container mx-auto pt-16 ">
-            <div class="flex flex-col md:flex-row w-full">
-                {# Start of search aside #}
-                <div class="basis-1/4 flex flex-wrap md:flex-col items-start mx-5 md:order-last">
-                    {# Start of TAG #}
-                    <div class="lg:max-w-[548px] w-full mx-auto">
-                        <h2 class="font-title">Tags populaires</h2>
-                        <div class="relative">
-                            <svg class="absolute z-20 cursor-pointer top-[18px] left-4" width="16" height="16"
-                                 viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.2716 13.1684L11.3313 10.2281C12.0391 9.28574 12.4213 8.13865 12.42 6.96C12.42 3.94938 9.97063 1.5 6.96 1.5C3.94938 1.5 1.5 3.94938 1.5 6.96C1.5 9.97063 3.94938 12.42 6.96 12.42C8.13865 12.4213 9.28574 12.0391 10.2281 11.3313L13.1684 14.2716C13.3173 14.4046 13.5114 14.4756 13.711 14.47C13.9105 14.4645 14.1004 14.3827 14.2415 14.2415C14.3827 14.1004 14.4645 13.9105 14.47 13.711C14.4756 13.5114 14.4046 13.3173 14.2716 13.1684ZM3.06 6.96C3.06 6.18865 3.28873 5.43463 3.71727 4.79328C4.14581 4.15192 4.7549 3.65205 5.46754 3.35687C6.18017 3.06169 6.96433 2.98446 7.72085 3.13494C8.47738 3.28542 9.17229 3.65686 9.71772 4.20228C10.2631 4.74771 10.6346 5.44262 10.7851 6.19915C10.9355 6.95567 10.8583 7.73983 10.5631 8.45247C10.268 9.1651 9.76808 9.77419 9.12673 10.2027C8.48537 10.6313 7.73135 10.86 6.96 10.86C5.92604 10.8588 4.93478 10.4475 4.20365 9.71635C3.47253 8.98522 3.06124 7.99396 3.06 6.96Z"
-                                      fill="#4B5563"/>
-                            </svg>
-                            <label>
-                                <input class="relative text-sm leading-none text-gray-600 bg-white  rounded  w-full px-10 py-4 outline-none"
-                                       type="text" placeholder="Saisissez votre recherche"/>
-                            </label>
-                            <div class="my-3 flex flex-wrap -m-1">
-                                {% for tag in tags %}
-                                    <span class="m-1 flex flex-wrap justify-between items-center text-xs sm:text-sm bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded px-4 py-2 font-bold leading-loose cursor-pointer dark:text-gray-300">
-									{{ tag.name }}
-									<svg xmlns="http://www.w3.org/2000/svg"
-                                         class="w-3 h-3 sm:h-4 sm:w-4 ml-4 text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300"
-                                         viewbox="0 0 20 20" fill="currentColor">
-										<path fill-rule="evenodd"
-                                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                              clip-rule="evenodd"/>
-									</svg>
-								</span>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                    {# End of TAG #}
-
-                    {# Start of Last article #}
-                    <div class="lg:max-w-[548px] w-full mx-auto hidden md:flex md:flex-col">
-                        <h2 class="font-title">Derniers articles</h2>
-                        <div class="relative">
-
-                            {% for last in lasts %}
-                                {% set counter = ( counter | default(0) ) + 1 %}
-                                <div class="flex justify-start">
-                                    <p class="text-2xl font-subtitle font-light text-primary pr-5">{{ '0' ~ counter ~ ' ' }}</p>
-                                    <div>
-
-                                        <a class="text-xl font-semibold text-neutral"
-                                           hx-target="#search-result"
-                                           hx-get="{{ path('post_details', {'id': last.id}) }}"
-                                           hx-swap="outerHTML"
-                                           hx-push-url="/blog/{{ last.slug }}"
-                                           href="#"
-                                        >
-                                            {{ last.title }}
-                                        </a>
-                                        <div class="flex items-center">
-                                            <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="12" height="12"
-                                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                 class="w-4 h-4">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"/>
-                                            </svg>
-                                            </span>
-                                            <p class="text-sm pl-3 font-subtitle text-primary">{{ last.createdAt | format_datetime(pattern="MMMM y", locale='fr') }}</p>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {# Start of Last article #}
-                </div>
-                {# End of search aside #}
-                <div class="basis-3/4 flex flex-col justify-center items-center gap-10 mx-5" id="search-result">
-
-                    {% if not posts %}
-                        <div class="grid h-screen place-items-center">
-                            <h2>Bienvenue sur mon Blog !</h2>
-                            <p>Il n'y a pas encore d'articles mais ils ne tarderont pas à venir!</p>
-                        </div>
-                    {% else %}
-                        {% for post in posts %}
-                            <div class="flex items-center justify-center w-full pb-8">
-                                <div class="bg-white border border-neutral shadow-lg rounded">
-                                    <div class="relative">
-                                        <img src="/uploads/images/{{ post.postImage }}" alt="{{ post.altImage }}" class="w-full">
-                                    </div>
-                                    <div class="px-5 xl:px-10 xl:pb-10">
-
-
-                                        <div class="pt-3 xl:pt-5 flex flex-col  items-start justify-between">
-                                            <div class="xl:pr-16 w-full">
-                                                <div class="text-center xl:text-left mb-3 xl:mb-0 flex flex-col xl:flex-row items-center justify-between xl:justify-start">
-                                                    <h2 class="mb-3 xl:mb-0 xl:mr-4 font-semibold text-lg text-neutral-900 font-subtitle hover:underline md:text-2xl tracking-normal">
-                                                        {{ post.title }}
-                                                    </h2>
-
-                                                </div>
-                                                <p class="text-center xl:text-left mt-2 tracking-normal text-sm font-text text-neutral-200 md:text-lg">
-                                                    {{ post.shortDescription }}
-                                                </p>
-                                            </div>
-
-                                            <div class="w-full flex flex-row justify-between mt-5">
-                                                <div class="flex items-start justify-center xl:justify-start mt-1 md:mt-0 mb-5 md:mb-0">
-                                                    <a class="border border-1 border-accent text-sm text-neutral font-subtitle font-semibold  hover:text-base-100 hover:font-bold hover:bg-accent hover:border-neutral hover:transition hover:duration-500 hover:ease-in hover:rounded px-6 py-1 flex justify-center items-center"
-                                                       hx-target="#search-result"
-                                                       hx-get="{{ path('post_details', {'id': post.id}) }}"
-                                                       hx-swap="outerHTML"
-                                                       hx-push-url="/blog/{{ post.slug }}"
-                                                       href="#"
-                                                    >
-                                                        Lire plus...
-                                                    </a>
-                                                </div>
-                                                <div class="flex items-end justify-center mt-1 md:mt-0 mb-5 md:mb-0">
-                                                    <div class="border border-1 border-accent text-sm text-neutral font-subtitle font-semibold  px-6 py-1 flex justify-center items-center">
-                                                        <i class="fa-solid fa-share-nodes pr-5"></i>
-                                                        Partagez
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                        <div class="d-flex justify-content-center align-items-center my-5">
-                            {{ knp_pagination_render(posts, 'partials/_pagination.html.twig') }}
-                        </div>
-                    {% endif %}
+    {% block content %}
+        <div id="response-div">
+            {{ include('partials/_blogNavbar.html.twig') }}
+            <div class="container mx-auto pt-16 ">
+                <div class="flex flex-col md:flex-row w-full">
+                    {# Start of search aside #}
+                    {% block search %}
+                        {{ include('partials/_blog-search-block.html.twig') }}
+                    {% endblock %}
+                    {# End of search aside #}
+                    {% block posts %}
+                        {{ include('partials/_list-posts.html.twig') }}
+                    {% endblock %}
 
                 </div>
-
             </div>
+            {% block footer %}
+            {{ include('partials/_footer.html.twig') }}
+            {% endblock %}
         </div>
-        {{ include('partials/_footer.html.twig') }}
-    </div>
-
-
+    {% endblock %}
 {% endblock %}

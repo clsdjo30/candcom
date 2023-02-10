@@ -1,0 +1,58 @@
+<div class="basis-3/4 flex flex-col justify-center items-center gap-10 mx-5" id="search-result">
+
+    {% if not posts %}
+        <div class="grid h-screen place-items-center">
+            <h2>Bienvenue sur mon Blog !</h2>
+            <p>Il n'y a pas encore d'articles mais ils ne tarderont pas à venir!</p>
+        </div>
+    {% else %}
+        {% for post in posts %}
+            <div class="flex items-center justify-center w-full pb-8">
+                <div class="bg-white border border-neutral shadow-lg rounded">
+                    <div class="relative">
+                        <img src="/uploads/images/{{ post.postImage }}" alt="{{ post.altImage }}" class="w-full">
+                    </div>
+                    <div class="px-5 xl:px-10 xl:pb-10">
+
+
+                        <div class="pt-3 xl:pt-5 flex flex-col  items-start justify-between">
+                            <div class="xl:pr-16 w-full">
+                                <div class="text-center xl:text-left mb-3 xl:mb-0 flex flex-col xl:flex-row items-center justify-between xl:justify-start">
+                                    <h2 class="mb-3 xl:mb-0 xl:mr-4 font-semibold text-lg text-neutral-900 font-subtitle hover:underline md:text-2xl tracking-normal">
+                                        {{ post.title }}
+                                    </h2>
+
+                                </div>
+                                <p class="text-center xl:text-left mt-2 tracking-normal text-sm font-text text-neutral-200 md:text-lg">
+                                    {{ post.shortDescription }}
+                                </p>
+                            </div>
+
+                            <div class="w-full flex flex-row justify-between mt-5">
+                                <div class="flex items-start justify-center xl:justify-start mt-1 md:mt-0 mb-5 md:mb-0">
+                                    <a class="border border-1 border-accent text-sm text-neutral font-subtitle font-semibold  hover:text-base-100 hover:font-bold hover:bg-accent hover:border-neutral hover:transition hover:duration-500 hover:ease-in hover:rounded px-6 py-1 flex justify-center items-center"
+                                       href="{{ path('post_details', {'slug': post.slug}) }}"
+
+                                    >
+                                        Lire plus...
+                                    </a>
+                                </div>
+                                <div class="flex items-end justify-center mt-1 md:mt-0 mb-5 md:mb-0">
+                                    <div class="border border-1 border-accent text-sm text-neutral font-subtitle font-semibold  px-6 py-1 flex justify-center items-center">
+                                        <i class="fa-solid fa-share-nodes pr-5"></i>
+                                        Partagez
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="d-flex justify-content-center align-items-center my-5">
+            {{ knp_pagination_render(posts, 'partials/_pagination.html.twig') }}
+        </div>
+    {% endif %}
+
+</div>

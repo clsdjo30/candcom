@@ -1,0 +1,17 @@
+
+    <!-- first post -->
+    <div class="w-8/12 h-auto mx-10">
+        <h1 class="text-gray-900 font-title text-3xl mt-5 font-thin"><a
+                    href="">{{ post.title }}</a>
+        </h1>
+        <span class="text-xs text-gray-800 font-thin block mb-5">By C.LS - {{ post.createdAt | format_datetime(pattern="MMMM y", locale='fr') }}</span>
+        <img class="w-full h-auto rounded"
+             src="/uploads/images/{{ post.postImage }}"
+             alt="{{ post.altImage }}"
+        >
+        <div class="text-gray-900 font-normal font-thin tracking-wider leading-loose" id="article">
+
+            {{ post.content | raw }}
+
+        </div>
+    </div>

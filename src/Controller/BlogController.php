@@ -37,12 +37,16 @@ class BlogController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'post_details', methods: ['GET'])]
+    #[Route('/{slug}', name: 'post_details', methods: ['GET'])]
     public function showAnnounceDetails(
         Post $post,
+        TagRepository $tags,
+        PostRepository $postRepository
     ): Response {
         return $this->render('blog/show_post_details.html.twig', [
             'post' => $post,
+            'lasts' => $postRepository->findByCreatedAt(),
+            'tags' => $tags->findAll()
         ]);
     }
 

@@ -1,21 +1,35 @@
-<div class="flex items-center justify-center w-full pb-8" id="search-result">
+{% extends 'base.html.twig' %}
 
-    <div class="mr-2 md:mr-4 ml-2 ">
-        <div class="pb-10">
-            <!-- first post -->
-            <div class="w-10/12 h-auto mx-10">
-                <img class="w-full h-auto rounded" src="{{ post.postImage }}" alt="">
-                <h1 class="text-gray-900 font-serif text-3xl my-5 font-thin"><a href="">{{ post.title }}</a></h1>
-                <span class="text-xs text-gray-800 font-thin block mb-5">By Page. {{ post.createdAt | format_datetime(pattern="MMMM y", locale='fr') }}</span>
-                <div class="text-gray-900 font-thin tracking-wider leading-loose" id="article">
+{% block title %}Connexion{% endblock %}
 
-                    {{ post.content | raw}}
+{% block body %}
+    {% block content %}
+        <div id="response-div">
+            {{ include('partials/_blogNavbar.html.twig') }}
+            <div class="container mx-auto pt-16 ">
+                <div class="flex flex-col md:flex-row w-full">
+                    {# Start of search aside #}
+                    {% block search %}
+                        {{ include('partials/_blog-search-block.html.twig') }}
+                    {% endblock %}
+                    {# End of search aside #}
+                    {% block posts %}
+                        {{ include('partials/_post-article.html.twig') }}
+                    {% endblock %}
 
                 </div>
             </div>
+            {% block footer %}
+                {{ include('partials/_footer.html.twig') }}
+            {% endblock %}
         </div>
-    </div>
-</div>
+    {% endblock %}
+{% endblock %}
+
+
+
+
+
 
 
 
