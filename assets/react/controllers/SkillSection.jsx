@@ -34,7 +34,7 @@ export default function () {
                 bigTitle="technos"
                 smallTitle="mes technos"
                 detail="skills"
-                desccription="Au fil des années je découvre davantage de technologies et c’est ce qui fait que j’aime cet univers.
+                description="Au fil des années je découvre davantage de technologies et c’est ce qui fait que j’aime cet univers.
                     En perpétuel mouvement, il y a toujours de nouvelles choses à apprendre ! Je mets ici une partie des
                     outils à ma disposition, évidemment la liste est non exhaustive et évoluera par la suite."
             />

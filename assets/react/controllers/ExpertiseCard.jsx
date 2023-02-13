@@ -1,7 +1,7 @@
 
 import React from  'react'
 
-function ExpertiseCard({image, altDescription, title, content, button}) {
+function ExpertiseCard({image, altDescription, title, subtitle, content, button, path}) {
 
     return (
         <div className="p-4 md:w-1/3">
@@ -17,12 +17,17 @@ function ExpertiseCard({image, altDescription, title, content, button}) {
                     <h2 className="font-semibold text-lg text-neutral-900 font-title md:text-2xl">
                         {title}
                     </h2>
+                    <h3 className="font-semibold text-base text-neutral-500 font-subtitle md:text-lg">
+                        {subtitle}
+                    </h3>
                 </div>
-                <div className="flex-grow">
+                <div className="flex-grow ">
                     <p className="text-sm font-text text-neutral-200 md:text-lg">
                         {content}
                     </p>
-                    <a className="mt-3 text-indigo-500 inline-flex items-center font-subtitle">
+                </div>
+                <div className="flex justify-end items-center">
+                    <a className="mt-3 text-indigo-500 inline-flex items-center font-subtitle" href={path}>
                         {button}
                     </a>
                 </div>

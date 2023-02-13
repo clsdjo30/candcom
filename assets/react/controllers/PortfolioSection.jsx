@@ -20,7 +20,6 @@ export default function PortfolioSection() {
                 bigTitle="Projets"
                 smallTitle="Mes Projets"
                 detail="Portfolio"
-                description="projets réaliser lors de ma formation"
             />
             <div className="grid grid-cols-1 gap-12 mt-8 lg:grid-cols-2">
                 <PortfolioCard
