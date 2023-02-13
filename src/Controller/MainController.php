@@ -61,5 +61,16 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/politique-de-confidentialite', name: 'privacy-policy')]
+    public function getPrivacy() :Response
+    {
+        return $this->render('main/privacy-policy.html.twig');
+    }
+
+    #[Route('/mentions-legales', name: 'legal')]
+    public function getLegal() :Response
+    {
+        return $this->render('main/legal.html.twig');
+    }
 
 }
