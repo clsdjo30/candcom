@@ -23,13 +23,13 @@ class MailerService
      * @throws TransportExceptionInterface
      */
     public function sendEmail(
-        $to = 'to@example.com ',
+        $to = 'contact@candcom.com',
         $subject = 'This is the Mail subject !',
         $content = '',
         $text = ''
     ): void{
         $email = (new Email())
-            ->from('noreply@mysite.com')
+            ->from('contact@c-and-com.studio')
             ->to($to)
             ->subject($subject)
             ->text($text)
