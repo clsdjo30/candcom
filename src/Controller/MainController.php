@@ -24,7 +24,7 @@ class MainController extends AbstractController
         PostRepository     $postRepository,
         Request            $request,
         MailerService      $mailer,
-    EntityManagerInterface $manager
+        EntityManagerInterface $manager
     ): Response
     {
         $posts = $postRepository->findAll();
@@ -37,7 +37,7 @@ class MainController extends AbstractController
             // On recupere les données du formulaire
             $contactFormData = $form->getData();
 
-             // On injecte les données du formulaire dans le Mailer Service
+            // On injecte les données du formulaire dans le Mailer Service
             $subject = 'Demande de contact sur votre site de ' . $contactFormData->getEmail();
             $content = $contactFormData->getName() . ' vous a envoyé le message suivant: ' . $contactFormData->getMessage();
 

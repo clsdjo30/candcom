@@ -2,6 +2,7 @@ import React from 'react'
 import avatar from '../../images/avatar_002.png'
 
 
+
 export default function Presentation() {
 
     return (
@@ -34,7 +35,12 @@ export default function Presentation() {
                         </p>
 
                         <div className="flex justify-end my-10">
-                            <button className="border border-1 border-accent text-neutral py-2 px-12 font-subtitle font-semibold  hover:text-base-100 hover:font-bold hover:bg-accent hover:border-neutral hover:transition hover:duration-500 hover:ease-in hover:rounded hover:delay-150">Télécharger mon CV</button>
+                            <button
+                                className="border border-1 border-accent text-neutral py-2 px-12 font-subtitle font-semibold  hover:text-base-100 hover:font-bold hover:bg-accent hover:border-neutral hover:transition hover:duration-500 hover:ease-in hover:rounded hover:delay-150">
+                                <a href={`/cv/cv_cedric.pdf`} target={`_blank`}>
+                                    Afficher mon CV
+                                </a>
+                            </button>
                         </div>
                     </div>
                 </div>

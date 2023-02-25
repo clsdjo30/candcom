@@ -34,8 +34,7 @@ export default function () {
                 bigTitle="technos"
                 smallTitle="mes technos"
                 detail="skills"
-                description="Au fil des années je découvre davantage de technologies et c’est ce qui fait que j’aime cet univers.
-                    En perpétuel mouvement, il y a toujours de nouvelles choses à apprendre ! Je mets ici une partie des
+                description="Au fil des années je découvre d'avantage de technologies et c’est ce qui fait que j’aime cet univers en perpétuel mouvement. Il y a toujours de nouvelles choses à apprendre ! Je mets ici une partie des
                     outils à ma disposition, évidemment la liste est non exhaustive et évoluera par la suite."
             />
             <div className="xl:py-16 lg:py-16 md:py-16 sm:py-16 px-15 flex flex-wrap">
