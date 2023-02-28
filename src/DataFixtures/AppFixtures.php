@@ -53,6 +53,7 @@ class AppFixtures extends Fixture
                 ->setShortDescription($faker->realTextBetween(160, 260))
                 ->setContent($faker->text())
                 ->setCreatedAt($faker->dateTime())
+                ->setUpdatedAt($faker->dateTime())
                 ->setPostImage($faker->imageUrl(640, 480, 'animals', true))
                 ->setAltImage($faker->sentence(3))
                 ->setIsAhead(false)

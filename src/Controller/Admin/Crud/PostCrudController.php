@@ -75,6 +75,7 @@ class PostCrudController extends AbstractCrudController
         }
 
         $entityInstance->setCreatedAt(new DateTime());
+        $entityInstance->setUpdatedAt(new DateTime());
 
         $this->addFlash('success', 'Votre articles a bien été ajouté !');
 
