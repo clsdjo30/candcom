@@ -7,7 +7,7 @@ export default function Presentation() {
 
     return (
 
-        <div className="container mx-auto pt-16">
+        <div className="container mx-auto pt-16" id='next'>
             <div className="w-11/12 xl:w-2/3 lg:w-2/3 md:w-2/3 mx-auto sm:mb-10 mb-8">
                 <div className="border-2 border-accent-neutral bg-base-100 md:flex md:items-center">
                     <figure><img src={avatar} alt="Album"/></figure>
@@ -37,7 +37,7 @@ export default function Presentation() {
                         <div className="flex justify-end my-10">
                             <button
                                 className="border border-1 border-accent text-neutral py-2 px-12 font-subtitle font-semibold  hover:text-base-100 hover:font-bold hover:bg-accent hover:border-neutral hover:transition hover:duration-500 hover:ease-in hover:rounded hover:delay-150">
-                                <a href={`/cv/cv_cedric.pdf`} target={`_blank`}>
+                                <a href={`/cv/Cédric_Le_Sergent_Dev_FullStack_2023_003.pdf`} target={`_blank`}>
                                     Afficher mon CV
                                 </a>
                             </button>

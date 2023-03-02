@@ -1,110 +1,204 @@
-import React, {useEffect, useRef} from 'react';
-import '../../styles/HeroSection.css'
-import gsap, {Power1,} from 'gsap'
+import React, { useEffect, useRef } from "react";
+import "../../styles/HeroSection.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import Presentation from "./Presentation";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function HeroSection() {
-    let logo_1 = useRef(null)
-    let subTitle = useRef(null)
-    let logo_2 = useRef(null);
-    let logo_3 = useRef(null);
-    let logo_4 = useRef(null);
+    let ref = useRef();
+
+    const onLoad = () => {
+        gsap
+            .timeline({
+                onComplete: function () {
+                    console.log("animation terminée");
+                },
+            })
+            .fromTo(
+                "#cedric",
+                {
+                    y: -100,
+                    scale: 0.2,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.33,
+                    delay: 0.7,
+                    rotate: 360,
+                    scale: 1
+                }
+            )
+            .fromTo(
+                "#subtitle",
+                {
+                    y: -100,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.33,
+                    delay: 0.7,
+                }
+            )
+            //Anime le h1
+            .to("#letter", {
+                margin: "0 2vw",
+                delay: 0.4,
+                duration: 0.2,
+                rotate: 360,
+            })
+            .to("#letter", {
+                margin: "0",
+                delay: 0.4,
+                duration: 0.2,
+            })
+            // supprime le 1er sous titre
+            .to("#h2-1", {
+                x: -ref.current.clientWidth,
+            })
+
+            //developpeur PHP
+            .fromTo(
+                "#h2-2",
+                {
+                    y: -100,
+                    opacity: 0,
+                    display: "inline-block",
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.33,
+                    delay: 0.7,
+                }
+            )
+            //Anime le h1
+            .to("#letter", {
+                margin: "0 2vw",
+                delay: 0.4,
+                duration: 0.2,
+                rotate: 0,
+            })
+            .to("#letter", {
+                margin: "0",
+                delay: 0.4,
+                duration: 0.2,
+            })
+            // supprime le 2em sous titre
+            .to("#h2-2", {
+                x: ref.current.clientWidth,
+            })
+            .fromTo(
+                "#h2-3",
+                {
+                    y: -100,
+                    opacity: 0,
+                    display: "inline-block",
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.33,
+                    delay: 0.7,
+                }
+
+            )
+            .to(window, {
+                duration: 0.5,
+                scrollTo: "#next"
+            })
+
+    };
 
     useEffect(() => {
-        gsap.fromTo(logo_1, {
-                opacity: 0,
-                duration: 1.5,
-                y: -200,
-                ease: Power1.easeInOut
-            },
-            {
-                y: 0,
-                opacity: 1
-            });
-        gsap.fromTo(logo_2, {
-                opacity: 0,
-                duration: 0.5,
-                y: 200,
-                ease: Power1.easeInOut
-            },
-            {
-                y: 0,
-                opacity: 1
-            });
-        gsap.fromTo(logo_3, {
-                opacity: 0,
-                duration: 1.5,
-                y: -200,
-                ease: Power1.easeInOut
-            },
-            {
-                y: 0,
-                opacity: 1
-            });
-        gsap.fromTo(logo_4, {
-                opacity: 0,
-                duration: 0.5,
-                y: 200,
-                ease: Power1.easeInOut
-            },
-            {
-                y: 0,
-                opacity: 1
-            });
-
-        gsap.fromTo(
-            subTitle,
-            {
-                duration: 3,
-                opacity: 0,
-                ease: Power1.easeInOut,
-                x: -300,
-            },
-            {
-                x: 0,
-                opacity: 1
-            }
-        );
-
-
-    })
+        onLoad();
+    }, []);
 
     return (
+<>
+        <div className="h-screen w-full heroBackground bg-cover" ref={ref}>
+            <div
+                id="titles"
+                className="flex flex-col justify-center items-center h-screen w-full"
+            >
+                <h1 className="uppercase flex flex-col font-semibold font-title  text-[#e7e7e7] text-[6vmax] md:text-[6.05vmax] leading-none">
+                    <div className="flex justify-center" id="cedric">
+            <span id="letter" className="flex justify-center">
+              C
+            </span>
+                        <span id="letter" className="flex justify-center">
+              E
+            </span>
+                        <span id="letter" className="flex justify-center">
+              D
+            </span>
+                        <span id="letter" className="flex justify-center">
+              R
+            </span>
+                        <span id="letter" className="flex justify-center">
+              I
+            </span>
+                        <span id="letter" className="flex justify-center">
+              C
+            </span>
+                    </div>
 
-
-        <div className="relative h-screen w-full heroBackground bg-cover">
-
-
-            <div className="absolute flex justify-center items-center h-screen w-full">
-                <h1 className="uppercase flex flex-col md:flex-row font-semibold font-title  text-[#e7e7e7] text-[6vmax] md:text-[6.05vmax] mix-blend-difference leading-none">
-                <span ref={(el) => (logo_1 = el)}
-                      className="flex justify-center">
-                    cédric
-                </span>
-                    <span ref={(el) => (logo_2 = el)}
-                          className="md:ml-10" id="second">
-                    le sergent
-                </span>
-
+                    <div className="flex" id="cedric">
+            <span id="letter" className="flex justify-center">
+              L
+            </span>
+                        <span id="letter" className="flex justify-center mr-4">
+              E
+            </span>
+                        <span id="letter" className="flex justify-center">
+              S
+            </span>
+                        <span id="letter" className="flex justify-center">
+              E
+            </span>
+                        <span id="letter" className="flex justify-center">
+              R
+            </span>
+                        <span id="letter" className="flex justify-center">
+              G
+            </span>
+                        <span id="letter" className="flex justify-center">
+              E
+            </span>
+                        <span id="letter" className="flex justify-center">
+              N
+            </span>
+                        <span id="letter" className="flex justify-center">
+              T
+            </span>
+                    </div>
                 </h1>
-            </div>
-            <div className=" capitalize absolute flex justify-center items-center h-screen w-full top-32">
-                <h2 ref={(el) => (subTitle = el)}
-                    className="flex flex-col md:flex-row font-semibold font-title  text-[#e7e7e7] text-[4vmax] md:text-[5.05vmax] mix-blend-difference leading-none">
-                    <span ref={(el) => (logo_3 = el)}
-                          className="flex justify-center">
-                  développeur
-                </span>
-                    <span ref={(el) => (logo_4 = el)}
-                          className="md:ml-10 flex justify-center" id="second">
-                    fullstack
-                </span>
-
-
+                <h2
+                    id="subtitle"
+                    className="flex flex-col items-center justify-center capitalize font-semibold font-title  text-[#e7e7e7] text-[4vmax] md:text-[5.05vmax] leading-none mt-5"
+                >
+          <span id="h2-1" className="relative ml-5">
+            Développeur Fullstack
+          </span>
+                    <span id="h2-2" className="absolute ml-5 hidden">
+            Développeur PHP
+          </span>
+                    <span id="h2-3" className="absolute ml-5 hidden">
+            Développeur Symfony
+          </span>
                 </h2>
             </div>
-
         </div>
-    )
 
+        <Presentation />
+    </>
+
+
+    );
 }
-
