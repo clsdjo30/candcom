@@ -3,7 +3,6 @@ import "../../styles/HeroSection.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import Presentation from "./Presentation";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -69,6 +68,8 @@ export default function HeroSection() {
                 {
                     y: -100,
                     opacity: 0,
+                    ease: "back",
+                    delay: 0.1,
                     display: "inline-block",
                 },
                 {
@@ -81,7 +82,7 @@ export default function HeroSection() {
             //Anime le h1
             .to("#letter", {
                 margin: "0 2vw",
-                delay: 0.4,
+                delay: 0.7,
                 duration: 0.2,
                 rotate: 0,
             })
@@ -93,12 +94,27 @@ export default function HeroSection() {
             // supprime le 2em sous titre
             .to("#h2-2", {
                 x: ref.current.clientWidth,
+                delay: 1
             })
+            //Anime le h1
+            .to("#letter", {
+                margin: "0 2vw",
+                delay: 0.4,
+                duration: 0.2,
+                rotate: 360,
+            })
+            .to("#letter", {
+                margin: "0",
+                delay: 0.4,
+                duration: 0.2,
+            })
+            // fait apparatitre le dernier titre
             .fromTo(
                 "#h2-3",
                 {
                     y: -100,
                     opacity: 0,
+                    delay: 0.3,
                     display: "inline-block",
                 },
                 {
@@ -109,10 +125,7 @@ export default function HeroSection() {
                 }
 
             )
-            .to(window, {
-                duration: 0.5,
-                scrollTo: "#next"
-            })
+
 
     };
 
@@ -121,7 +134,7 @@ export default function HeroSection() {
     }, []);
 
     return (
-<>
+
         <div className="h-screen w-full heroBackground bg-cover" ref={ref}>
             <div
                 id="titles"
@@ -196,8 +209,8 @@ export default function HeroSection() {
             </div>
         </div>
 
-        <Presentation />
-    </>
+
+
 
 
     );

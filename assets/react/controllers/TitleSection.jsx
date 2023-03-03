@@ -30,3 +30,5 @@ function TitleSection({bigTitle, detail, smallTitle, description}) {
     )
 }
 export default TitleSection;
+
+

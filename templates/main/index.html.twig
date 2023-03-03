@@ -4,7 +4,8 @@
 
 {% block body %}
     {% for message in app.flashes('success') %}
-        <div class="absolute z-50 alert alert-success shadow-lg font-subtitle text-lg text-white" role="alert">
+        <div class="absolute z-50 alert alert-success shadow-lg font-subtitle text-lg text-white"
+             role="alert">
             {{ message }}
         </div>
     {% endfor %}
@@ -34,12 +35,12 @@
     {# include main navbar #}
     {{ include('partials/_navbar.html.twig') }}
 
+    {# import Expertise Section #}
+    <div {{ react_component('ExpertiseSection') }} id="services"></div>
 
     {# import Skill Section #}
     <div {{ react_component('SkillSection') }}></div>
 
-    {# import Expertise Section #}
-    <div {{ react_component('ExpertiseSection') }} id="services"></div>
 
     {# import Portfolio Section #}
     <div {{ react_component('PortfolioSection') }} id="portfolio" class="z-0"></div>
@@ -77,6 +78,9 @@
             </a>
         </button>
     </div>
+
+    {# import Skill Section #}
+    <div {{ react_component('Presentation') }}></div>
 
     {# import Blog Title Module #}
     <div {{ react_component('TitleSection', {

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React, {useEffect} from "react";
 import htmlCss from '../../images/skill_logos/html_css.png'
 import mysql from '../../images/skill_logos/MySQL_textlogo.svg.png'
 import bootstrap from '../../images/skill_logos/Bootstrap_logo.svg.png'
@@ -187,7 +187,6 @@ export default function () {
             scrub: true,
             pin: true,
             anticipatePin: 1,
-            markers:true
         })
 
     }
