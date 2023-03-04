@@ -8,7 +8,7 @@ import ExpertiseCard from "./ExpertiseCard";
 export default function ExpertiseSection() {
     return (
         <section className="text-gray-600 body-font">
-            <div className="container px-5 py-24 mx-auto">
+            <div className="container px-5 md:py-24 py-12 mx-auto">
                 <TitleSection
                     bigTitle="Expertises"
                     smallTitle="expertises"

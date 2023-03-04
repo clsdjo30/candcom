@@ -4,7 +4,8 @@
 
 {% block body %}
     {% for message in app.flashes('success') %}
-        <div class="absolute z-50 alert alert-success shadow-lg font-subtitle text-lg text-white" role="alert">
+        <div class="absolute z-50 alert alert-success shadow-lg font-subtitle text-lg text-white"
+             role="alert">
             {{ message }}
         </div>
     {% endfor %}
@@ -34,61 +35,54 @@
     {# include main navbar #}
     {{ include('partials/_navbar.html.twig') }}
 
-    {# import Presentation Section #}
-    <div {{ react_component('Presentation') }}></div>
-
+    {# import Expertise Section #}
+    <div {{ react_component('ExpertiseSection') }} id="services"></div>
 
     {# import Skill Section #}
     <div {{ react_component('SkillSection') }}></div>
 
-    {# import Expertise Section #}
-    <div {{ react_component('ExpertiseSection') }} id="services"></div>
 
     {# import Portfolio Section #}
     <div {{ react_component('PortfolioSection') }} id="portfolio" class="z-0"></div>
 
-    {# import Blog Title Module #}
-    <div {{ react_component('TitleSection', {
-        number:"4.",
-        bigTitle:"blog",
-        smallTitle:"blog",
-        detail:"articles"
-    }) }} class="mt-24" id="blog">
-    </div>
-
-    {# import Portfolio Section #}
-    <div class="lg:flex justify-center mx-10">
-        {% for post in posts %}
-            {% if post.isAhead == true %}
-                {{ include('partials/_blog-section.html.twig') }}
-            {% endif %}
-        {% endfor %}
-        {# Aside blog post  #}
-        <div class="lg:ml-6 lg:mt-0 mt-7 2xl:w-3/12 lg:w-4/12 w-full flex lg:flex-col sm:flex-row flex-col items-center justify-between">
-            {% for post in posts %}
-                {% if post.isAside == true %}
-                    {{ include('partials/_aside-blog-section.html.twig') }}
-                {% endif %}
-            {% endfor %}
+    <div class="container mx-auto px-5 md:px-16 md:py-16">
+        {# import Blog Title Module #}
+        <div {{ react_component('TitleSection', {
+            number:"4.",
+            bigTitle:"blog",
+            smallTitle:"blog",
+            detail:"articles"
+        }) }} class="mt-24" id="blog">
         </div>
 
-    </div>
-    <div class="flex justify-center items-center w-full py-2 gap-2 mt-5 mb-10">
-        <button class="btn btn-outline btn-xs sm:btn-sm md:btn-md">
-            <a href="{{ path('blog') }}">
-                Voir plus d'articles
-            </a>
-        </button>
+        {# import Portfolio Section #}
+        <div class="lg:flex justify-center mx-10">
+            {% for post in posts %}
+                {% if post.isAhead == true %}
+                    {{ include('partials/_blog-section.html.twig') }}
+                {% endif %}
+            {% endfor %}
+            {# Aside blog post  #}
+            <div class="lg:ml-6 lg:mt-0 mt-7 2xl:w-3/12 lg:w-4/12 w-full flex lg:flex-col sm:flex-row flex-col items-center justify-between">
+                {% for post in posts %}
+                    {% if post.isAside == true %}
+                        {{ include('partials/_aside-blog-section.html.twig') }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+        <div class="flex justify-center items-center w-full py-2 gap-2 mt-5 mb-10">
+            <button class="btn btn-outline btn-xs sm:btn-sm md:btn-md">
+                <a href="{{ path('blog') }}">
+                    Voir plus d'articles
+                </a>
+            </button>
+        </div>
     </div>
 
-    {# import Blog Title Module #}
-    <div {{ react_component('TitleSection', {
-        number:"5.",
-        bigTitle:"contact",
-        smallTitle:"renseignements",
-        detail:"travaillons ensemble"
-    }) }} class="mt-24">
-    </div>
+    {# import Skill Section #}
+    <div {{ react_component('Presentation') }}></div>
 
     {# include Contact Form #}
     {{ include('partials/_contact-form.html.twig') }}

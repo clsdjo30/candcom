@@ -14,7 +14,7 @@ export default function PortfolioSection() {
     const fitnessImage = fitnessClub
     const trtImage = trtConsulting
     return (
-        <div className="container mx-auto px-5 md:px-16 py-16">
+        <div className="container mx-auto px-5 md:px-16 md:py-16 pt-6">
 
             <TitleSection
                 bigTitle="Projets"
