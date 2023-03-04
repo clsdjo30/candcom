@@ -40,7 +40,7 @@ export default function Presentation() {
                             </a>
                         </button>
                     </div>
-                    <img src={avatar} className="self-center mx-5 mt-5 max-w-sm lg:max-w-lg xl:max-w-md md:max-w-md lg:order-last lg:mb-5 rounded-lg shadow-2xl"
+                    <img src={avatar} className="self-center mx-5 mt-5 max-w-xs lg:max-w-lg xl:max-w-md md:max-w-md lg:order-last lg:mb-5 rounded-lg shadow-2xl"
                          alt="Cedric Le Sergent - Portrait"/>
                 </div>
             </section>
