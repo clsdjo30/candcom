@@ -198,7 +198,7 @@ export default function () {
 
     return (
         <>
-            <div className="container mx-auto px-5 md:px-16 pt-16" id="logoContainer">
+            <div className="container mx-auto px-5 md:px-16 md:pt-16 pb-10" id="logoContainer">
                 <TitleSection
                     bigTitle="technos"
                     smallTitle="mes technos"

@@ -94,7 +94,8 @@ export default function HeroSection() {
             // supprime le 2em sous titre
             .to("#h2-2", {
                 x: ref.current.clientWidth,
-                delay: 1
+                delay: 1,
+                display: "none"
             })
             //Anime le h1
             .to("#letter", {

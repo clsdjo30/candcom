@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TitleSection({bigTitle, detail, smallTitle, description}) {
+function TitleSection({bigTitle, detail, smallTitle, description, citation}) {
 
     return (
         <>
@@ -24,11 +24,14 @@ function TitleSection({bigTitle, detail, smallTitle, description}) {
             <div className="flex-column justify-center items-center mt-5">
                 <p className="text-base md:text-lg lg:text-xl text-center text-gray-600 font-subtitle xl:w-10/12 xl:mx-auto pb-2">
                     {description}
+                    <span className="text-lg italic font-text">"{citation}"</span>
                 </p>
+
             </div>
         </>
     )
 }
+
 export default TitleSection;
 
 
