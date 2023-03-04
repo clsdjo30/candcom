@@ -13,8 +13,7 @@ export default function Presentation() {
                 bigTitle="a propos"
                 smallTitle="about me"
                 detail="all"
-                description='Le plus grand défi de la programmation est de trouver un équilibre entre la complexité et la simplicité.'
-                citation="Rasmus Lerdorf"
+                description='Le plus grand défi de la programmation est de trouver un équilibre entre la complexité et la simplicité. - Rasmus Lerdorf'
             />
                 <div className="w-full flex flex-col lg:flex-row justify-center align-center content-center border border-neutral mt-5">
 
