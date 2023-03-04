@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 import "../../styles/HeroSection.css";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -124,7 +124,6 @@ export default function HeroSection() {
                     stagger: 0.33,
                     delay: 0.7,
                 }
-
             )
 
 
@@ -197,21 +196,18 @@ export default function HeroSection() {
                     id="subtitle"
                     className="flex flex-col items-center justify-center capitalize font-semibold font-title  text-[#e7e7e7] text-[4vmax] md:text-[5.05vmax] leading-none mt-5"
                 >
-          <span id="h2-1" className="relative ml-5">
+          <span id="h2-1" className="relative text-[3vmax] md:text-[4vmax] ml-5">
             Développeur Fullstack
           </span>
-                    <span id="h2-2" className="absolute ml-5 hidden">
+                    <span id="h2-2" className="absolute text-[3vmax] md:text-[4vmax] ml-5 hidden">
             Développeur PHP
           </span>
-                    <span id="h2-3" className="absolute ml-5 hidden">
+                    <span id="h2-3" className="absolute text-[3vmax] md:text-[4vmax] ml-5 hidden">
             Développeur Symfony
           </span>
                 </h2>
             </div>
         </div>
-
-
-
 
 
     );
