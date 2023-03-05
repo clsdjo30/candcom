@@ -1,6 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Connexion{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
+
+ {% block description %}
+     <meta name="description" content="{{ post.title }}">
+{% for tag in post.tags %}
+     <meta name="keywords" content="{{ tag.name }}">
+{% endfor %}
+     <meta name="image" content="{{ post.postImage }}">
+ {% endblock %}
+
+{% block og %}
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:site_name" content="{{ post.title }}">
+    <meta property="og:url" content="https://candcom.com/">
+    <meta property="og:description" content="{{ post.shortDescription }}">
+    <meta property="og:type" content="website">
+    <meta name="og:locale" content="fr_FR">
+    <meta property="og:image" content="{{ post.postImage }}">
+{% endblock %}
+
+{% block twitter %}
+{% endblock %}
+
 
 {% block body %}
     {% block content %}

@@ -4,7 +4,7 @@
 
 @layer base {
     pre {
-        @apply bg-neutral p-3 rounded text-white whitespace-pre-wrap overflow-x-auto font-text
+        @apply bg-info p-3 rounded text-white whitespace-pre-wrap overflow-x-auto
     }
     div #article > ul  >li > a{
         @apply underline text-warning

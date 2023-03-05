@@ -19,8 +19,7 @@ export default function Presentation() {
 
                     <div className="w-full flex flex-col md:self-center lg:w-2/3 md:w-10/12 p-8 order-last">
                         <p className="text-justify font-text text-lg">
-                            Récemment reconverti en tant que <strong>développeur backend</strong>,
-                            je me sens très excité à l'idée d'affronter de nouveaux challenges.
+                            Développeur web passionné et polyvalent, je suis en mesure de concevoir des applications et de développer des sites web en utilisant les technologies les plus récentes.Développeur web passionné et polyvalent, je suis en mesure de concevoir des applications et de développer des sites web en utilisant les technologies les plus récentes.
                         </p>
                         <p className="text-justify font-text  text-lg mt-3">
                             J’ai appris à gérer des environnements complexes et à résoudre des
@@ -29,7 +28,7 @@ export default function Presentation() {
                         </p>
                         <p className="text-justify font-text text-lg my-3">
                             Toujours prêt à apprendre et a développer mes compétences, j’apporterais
-                            à vos projet une vrai valeur ajouté grâce à mon expérience et à ma
+                            à vos projet une vraie valeur ajoutée grâce à mon expérience et à ma
                             capacité à travailler de manière efficace.
                         </p>
                         <button

@@ -1,24 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Cédric Le Sergent - Développeur Web Fullstack{% endblock %}</title>
-        <link rel="icon" href="{{ asset('build/images/avatar_002.png') }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cutive+Mono&family=VT323&display=swap" rel="stylesheet">
+    <title>{% block title %}Cédric Le Sergent - Développeur Web Fullstack{% endblock %}</title>
 
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+    <!-- SEARCH ENGINES -->
+    {% block description %}
+    <meta name="description" content="Développeur Web Backend Php-Symfony">
+    <meta name="keywords" content="cedric, le sergent, developer, développeur, web, mobile,
+    france, nîmes, remote, télétravail, symfony, php, mysql, tailwindCss, html, css, js,
+    javascript, react, api, responsive, sylius, docker, compose, linux">
+    <meta name="image" content="https://candcom.com/build/images/cls_candcom_avatar.007cbb7f.png">
+    <meta name="developer" content="Cedric Le Sergent">
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <!-- BALISE OPEN GRAPH -->
+    {% block og %}
+    <meta property="og:title" content="Cédric Le Sergent - Développeur Web Backend Php-Symfony">
+    <meta property="og:site_name" content="Portfolio - Cédric Le Sergent - Développeur Symfony">
+    <meta property="og:url" content="https://candcom.com">
+    <meta property="og:description" content="Développeur backend PHP Symfony avec 2 ans d'expérience basé à Nîmes, je suis spécialisé dans la création de solutions web sur mesure. Découvrez mes projets et compétences en développement web">
+    <meta property="og:type" content="website">
+    <meta name="og:locale" content="fr_FR">
+    <meta property="og:image" content="https://candcom.com/build/images/cls_candcom_avatar.007cbb7f.png">
+    {% endblock %}
+
+    <!-- BALISE OPEN GRAPH -->
+    {% block twitter %}
+    {% endblock %}
+
+    <link rel="icon" href="{{ asset('build/images/avatar_002.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Cutive+Mono&family=VT323&display=swap"
+          rel="stylesheet">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+
+<!-- Google tag (gtag.js) -->
+{% block gAnal %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0B2PQ6NTLT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-0B2PQ6NTLT');
+    </script>
+{% endblock %}
+<body>
+{% block body %}{% endblock %}
+</body>
 </html>

@@ -31,7 +31,7 @@ export default function ExpertiseSection() {
                         altDescription="logo shield"
                         title="Développement"
                         subtitle="Web & Application"
-                        content="Toutes les applications que je crées sont développé avec Symfony, ce qui offre une personnalisation totale de vos pages et une grande liberté d'action. Je conçois, pour vous,  des sites qui s'adaptent à votre utilisation."
+                        content="Toutes les applications que je crée sont développées avec Symfony, ce qui offre une personnalisation totale de vos pages et une grande liberté d'action. Je conçois, pour vous,  des sites qui s'adaptent à votre utilisation."
                         button="C'est parti !"
                         path="#contact"
                     />

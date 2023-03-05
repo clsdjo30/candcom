@@ -48,7 +48,8 @@ class PostCrudController extends AbstractCrudController
             TextField::new('altImage')
                 ->setLabel("SEO - Description de la bannière")
                 ->setColumns(6),
-            TextEditorField::new('content')->hideOnIndex()
+            TextEditorField::new('content')
+                ->hideOnIndex()
                 ->setColumns(12)
                 ->setLabel("Contenu de l'article")
                 ->setTrixEditorConfig([
@@ -57,7 +58,6 @@ class PostCrudController extends AbstractCrudController
                         'heading1' => ['tagName' => 'h1'],
                         'code' => ['tagName' => 'pre']
                     ],
-
                 ]),
             DateField::new('createdAt')->hideOnForm(),
             CollectionField::new('tags')

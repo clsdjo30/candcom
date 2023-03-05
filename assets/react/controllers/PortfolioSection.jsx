@@ -32,7 +32,7 @@ export default function PortfolioSection() {
                 <PortfolioCard
                     image={trtImage}
                     title="Trt Consulting"
-                    description=""
+                    description="Développement de l'interface backend et frontend d’un site d’annonce d’emploi pour l’hôtellerie et la restauration"
                     date="aout 2022"
                 />
                 <PortfolioCard
@@ -40,14 +40,14 @@ export default function PortfolioSection() {
                     altDescription="Page d'accueil du site sterilyzed"
                     image={catsImage}
                     title="Sterilyzed"
-                    description="Site pour une association de chat libre, réalisé en HTML avec le framework TailwindCss"
+                    description="Site pour une association de chats libres, réalisé en HTML avec le framework TailwindCss"
                     date="janvier 2022"
                 />
                 <PortfolioCard
                     image={diceGame}
                     lien="https://studi-gdw-eval-2-boost-a-web-site-with-javascript.vercel.app/"
                     title="Studi Dice Game"
-                    description="Développement d'un jeu de dés à 2 joueur en Javascript avec la librairie d'animation GreenSock et le framework TailwindCss"
+                    description="Développement d'un jeu de dés à 2 joueurs en Javascript avec la librairie d'animation GreenSock et le framework TailwindCss"
                     date="juillet 2022"
                 />
 

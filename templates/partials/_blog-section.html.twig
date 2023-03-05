@@ -20,9 +20,11 @@
                 </p>
             </div>
         </div>
-        <h1 class="lg:text-3xl text-2xl font-semibold mt-4 text-gray-800">
+        <h2 class="lg:text-3xl text-2xl font-semibold mt-4 text-gray-800">
+            <a href="{{ path('post_details', {'slug': post.slug}) }}">
             {{ post.title }}
-        </h1>
+            </a>
+        </h2>
         <p class="text-base leading-6 text-gray-600 dark:text-gray-200 mt-2">
             {{ post.shortDescription }}
         </p>
